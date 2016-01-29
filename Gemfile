@@ -18,6 +18,9 @@ gem 'normalize-rails'
 # for material framework
 gem 'materialize-sass'
 
+# for turbolinks
+gem 'jquery-turbolinks'
+
 
 group :development, :test do
   gem 'byebug'
