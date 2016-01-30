@@ -21,6 +21,9 @@ gem 'materialize-sass'
 # for turbolinks
 gem 'jquery-turbolinks'
 
+# for user integration
+gem 'devise'
+
 
 group :development, :test do
   gem 'byebug'
