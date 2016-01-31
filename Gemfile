@@ -24,6 +24,9 @@ gem 'jquery-turbolinks'
 # for user integration
 gem 'devise'
 
+# for authorization of users
+gem 'pundit'
+
 
 group :development, :test do
   gem 'byebug'
