@@ -27,6 +27,12 @@ gem 'devise'
 # for authorization of users
 gem 'pundit'
 
+# for image attachments
+gem 'paperclip'
+
+# for WYSIWYG editor
+gem 'ckeditor'
+
 
 group :development, :test do
   gem 'byebug'

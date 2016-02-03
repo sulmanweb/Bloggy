@@ -19,7 +19,9 @@
               <div class="card">
                 <div class="card-content black-text">
                   <span class="card-title black-text"><%= blog.title %></span>
-                  <p><%= blog.content.truncate(300, separator: " ") %></p>
+                  <% require 'rubygems' %>
+                  <% require 'nokogiri' %>
+                  <div><%= Nokogiri::HTML(blog.content).text.truncate(300, separator: ' ') %></div>
                 </div>
               </div>
             </div>
