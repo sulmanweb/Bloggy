@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
   root "blogs#index"
-  resources :blogs
+  resources :blogs do
+    resources :votes, only: [:create, :destroy]
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

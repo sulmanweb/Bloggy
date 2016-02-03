@@ -3,6 +3,11 @@
     <div class="col s12">
       <div class="card-panel">
         <h1 class="center"><%= @blog.title %></h1>
+        <% if user_signed_in? && @blog.voted(current_user) %>
+            <div class="center"><%= link_to '<i class="material-icons" style="color: #FF0000;">favorite</i>'.html_safe, blog_vote_path(@blog,@blog.votes.where(user_id: current_user.id).first.id), method: :delete %> <%= @blog.votes.count %></div>
+        <% else %>
+            <div class="center"><%= link_to '<i class="material-icons" style="color: #FF0000">favorite_border</i>'.html_safe, blog_votes_path(@blog), method: :post %> <%= @blog.votes.count %></div>
+        <% end %>
         <div class="center">
           <%= link_to '<i class="material-icons">mode_edit</i>'.html_safe, edit_blog_path(@blog), class: "btn blue" %>
           <%= link_to '<i class="material-icons">delete</i>'.html_safe, @blog, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn red" %>
